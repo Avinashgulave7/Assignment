@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Update Post{% endblock title %}
+{% block main-content %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Update Post</h3>
+   <hr>
+
+   <form action="" method="post">
+    {% csrf_token %}
+    <div class="col-12">
+      <label for="inputName" class="form-label">User</label>
+      <input type="text" class="form-control" id="inputEmail"  name='name' value="{{request.user}}" readonly>
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Text</label>
+      <input type="text" class="form-control" id="inputAddress" name='text' value="{{p.text}}">
+    </div>
+    <div class="col-12 mt-3">
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}
